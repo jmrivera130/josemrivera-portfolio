@@ -1,0 +1,31 @@
+:root {
+  --accent:#38bdf8;
+  --bg:#111827;
+  --fg:#e5e7eb;
+}
+
+body {
+  font-family:'Inter', sans-serif;
+  background:var(--bg);
+  color:var(--fg);
+}
+
+.font-serif { font-family:'Playfair Display', serif; }
+
+.glass-effect {
+  background:rgba(31,41,55,.5);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.accent-color{ color:var(--accent);}
+.accent-bg{ background:var(--accent);}
+.accent-border{ border-color:var(--accent); }
+
+#case-study-overlay{
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  background:rgba(17,24,39,.95);
+  backdrop-filter:blur(15px);
+  z-index:60; overflow-y:auto; -webkit-overflow-scrolling:touch;
+  padding:80px 0 20px;
+}

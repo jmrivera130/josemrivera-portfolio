@@ -170,7 +170,7 @@ function showCaseStudy(projectId){
   document.getElementById('case-study-metric2-label').textContent = project.metric2Label;
   document.getElementById('case-study-metric3-value').textContent = project.metric3Value;
   document.getElementById('case-study-metric3-label').textContent = project.metric3Label;
-  document.getElementById('case-study-lessons-learned').textContent = project.lessonsLearned;
+  document.getElementById('case-study-lessons-learned').innerHTML = project.lessonsLearned;
 
   const protoWrap = document.getElementById('clockwork-prototype-text-link-container');
   const protoLink = document.getElementById('clockwork-prototype-text-link');

@@ -4,56 +4,502 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jose M Rivera - UX Designer Portfolio</title>
-
-  <!-- Tailwind CDN (we'll purge later) -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:700&display=swap" rel="stylesheet" />
-
   <style>
     :root { --accent:#38bdf8; --bg:#111827; --fg:#e5e7eb; }
     body { font-family:'Inter', sans-serif; background:var(--bg); color:var(--fg); }
     .font-serif { font-family:'Playfair Display', serif; }
     .glass-effect { background:rgba(31,41,55,.5); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.1); }
-    .accent-color{ color:var(--accent);} .accent-bg{background:var(--accent);} .accent-border{border-color:var(--accent);}    
+    .accent-color{ color:var(--accent);} .accent-bg{background:var(--accent);} .accent-border{border-color:var(--accent);}
     #case-study-overlay{ position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(17,24,39,.95); backdrop-filter:blur(15px); z-index:60; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:80px 0 20px; }
   </style>
 </head>
 <body class="antialiased">
+  <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" id="home-link-header" class="text-xl font-bold tracking-wider">Jose M Rivera</a>
+      <nav class="hidden md:flex space-x-8 items-center" aria-label="Primary">
+        <a href="#work" class="hover:text-sky-400 transition-colors duration-300">Work</a>
+        <a href="#about" class="hover:text-sky-400 transition-colors duration-300">About</a>
+        <a href="#process" class="hover:text-sky-400 transition-colors duration-300">Process</a>
+        <a href="#contact" class="px-4 py-2 border border-sky-400 rounded-full text-sky-400 hover:bg-sky-400 hover:text-gray-900 transition-colors duration-300">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-2xl" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4" aria-label="Mobile menu">
+      <a href="#work" class="block py-2 hover:text-sky-400">Work</a>
+      <a href="#about" class="block py-2 hover:text-sky-400">About</a>
+      <a href="#process" class="block py-2 hover:text-sky-400">Process</a>
+      <a href="#contact" class="block mt-2 px-4 py-2 border border-sky-400 rounded-full text-sky-400 hover:bg-sky-400 hover:text-gray-900">Contact</a>
+    </div>
+  </header>
 
-  <!--
-    ——— Your entire HEADER, MAIN (home/work/about/process/contact),
-      and FOOTER content goes here exactly as before.
-  -->
+  <main>
+    <div id="portfolio-sections">
+      <section id="home" class="min-h-screen flex items-center pt-24 md:pt-0">
+        <div class="container mx-auto px-6">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left">
+              <h1 class="text-4xl md:text-6xl font-bold font-serif leading-tight">A UX Designer focused on <span class="accent-color">human-centered</span> solutions.</h1>
+              <p class="mt-6 text-lg text-gray-400 max-w-xl mx-auto md:mx-0">I'm Jose, an entry-level UX designer passionate about crafting intuitive and meaningful digital experiences that solve real-world problems.</p>
+              <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                <a href="#work" class="px-8 py-3 bg-sky-500 text-white font-semibold rounded-full hover:bg-sky-600 transition-transform duration-300 transform hover:scale-105">View My Work</a>
+                <a href="#contact" class="px-8 py-3 border border-gray-600 rounded-full hover:border-sky-400 hover:text-sky-400 transition-colors duration-300">Get In Touch</a>
+              </div>
+            </div>
+            <div class="flex justify-center">
+              <div class="relative w-80 h-80 md:w-96 md:h-96">
+                <div class="absolute inset-0 bg-gray-800 rounded-full transform rotate-6"></div>
+                <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portrait of Jose M Rivera" class="absolute inset-0 w-full h-full object-cover rounded-full shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/400x400/1f2937/e5e7eb?text=Jose+M+Rivera';" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="py-20 md:py-32 bg-gray-900/50">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">My Work</h2>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto">A selection of projects that highlight my problem-solving approach.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+            <div class="overflow-hidden rounded-lg shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="clockWORK case study preview" class="w-full h-auto object-cover transition-transform duration-500 case-study-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/374151/e5e7eb?text=Project+1';" loading="lazy" />
+            </div>
+            <div>
+              <h3 class="text-2xl md:text-3xl font-bold font-serif">clockWORK: Employee Time Management App</h3>
+              <p class="mt-4 text-gray-400">Simplifying time tracking and scheduling for employers and employees, ensuring accuracy and transparency.</p>
+              <div class="mt-6">
+                <span class="inline-block bg-gray-700 text-gray-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">User Research</span>
+                <span class="inline-block bg-gray-700 text-gray-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Mobile App Design</span>
+                <span class="inline-block bg-gray-700 text-gray-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Prototyping</span>
+              </div>
+              <a href="#" class="view-case-study-btn inline-block mt-6 text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-300 group" data-project-id="project1">View Case Study <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+            <div class="md:order-2 overflow-hidden rounded-lg shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1559028006-44a3e5e4014b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="CPRHero case study preview" class="w-full h-auto object-cover transition-transform duration-500 case-study-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/374151/e5e7eb?text=Project+2';" loading="lazy" />
+            </div>
+            <div class="md:order-1">
+              <h3 class="text-2xl md:text-3xl font-bold font-serif">CPRHero: Emergency First Aid & CPR App</h3>
+              <p class="mt-4 text-gray-400">Empowering users with accessible, step-by-step guidance for CPR and essential first aid in emergencies.</p>
+              <div class="mt-6">
+                <span class="inline-block bg-gray-700 text-gray-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Web Design</span>
+                <span class="inline-block bg-gray-700 text-gray-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">UX Writing</span>
+                <span class="inline-block bg-gray-700 text-gray-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Usability Testing</span>
+              </div>
+              <a href="#" class="view-case-study-btn inline-block mt-6 text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-300 group" data-project-id="project2">View Case Study <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="overflow-hidden rounded-lg shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Thirsty Bee case study preview" class="w-full h-auto object-cover transition-transform duration-500 case-study-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/374151/e5e7eb?text=Project+3';" loading="lazy" />
+            </div>
+            <div>
+              <h3 class="text-2xl md:text-3xl font-bold font-serif">Thirsty Bee: Event Staffing Service App</h3>
+              <p class="mt-4 text-gray-400">Streamlining event staffing bookings for customers, emphasizing efficiency and clarity.</p>
+              <div class="mt-6">
+                <span class="inline-block bg-gray-700 text-gray-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">E-commerce</span>
+                <span class="inline-block bg-gray-700 text-gray-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Design System</span>
+                <span class="inline-block bg-gray-700 text-gray-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">A/B Testing</span>
+              </div>
+              <a href="#" class="view-case-study-btn inline-block mt-6 text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-300 group" data-project-id="project3">View Case Study <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="py-20 md:py-32">
+        <div class="container mx-auto px-6">
+          <div class="grid md:grid-cols-5 gap-12 items-center">
+            <div class="md:col-span-2">
+              <div class="relative w-full" style="padding-bottom:125%;">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Jose working with a team" class="absolute inset-0 w-full h-full object-cover rounded-lg shadow-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x500/1f2937/e5e7eb?text=About+Me';" loading="lazy" />
+              </div>
+            </div>
+            <div class="md:col-span-3">
+              <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">About Me</h2>
+              <p class="mt-6 text-lg text-gray-400">Hello! I'm Jose. My journey into UX design began with a deep curiosity for understanding people and a desire to make technology more accessible and enjoyable for everyone. I believe that the best designs emerge from a blend of empathy, research, and iterative problem-solving.</p>
+              <p class="mt-4 text-lg text-gray-400">I thrive on untangling complex problems and translating user needs into clean, elegant, and effective solutions. While I'm at the beginning of my career, I'm a fast learner, a dedicated collaborator, and I'm eager to contribute to a team that values thoughtful design and user advocacy.</p>
+              <div class="mt-8">
+                <a href="#" class="px-6 py-3 border border-gray-600 rounded-full hover:border-sky-400 hover:text-sky-400 transition-colors duration-300">Download My Resume</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="py-20 md:py-32 bg-gray-900/50">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">My Foundational Design Process</h2>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto">I follow a flexible but structured design process to ensure every decision is informed by user needs and business goals.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+            <div class="glass-effect p-8 rounded-lg text-center">
+              <div class="flex items-center justify-center h-16 w-16 mx-auto mb-6 bg-sky-900/50 border-2 border-sky-500 rounded-full text-sky-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></div>
+              <h3 class="text-xl font-bold mb-2">1. Discover & Empathize</h3>
+              <p class="text-gray-400">I start by diving deep into the problem space through user interviews, surveys, and competitive analysis to build a foundation of empathy.</p>
+            </div>
+            <div class="glass-effect p-8 rounded-lg text-center">
+              <div class="flex items-center justify-center h-16 w-16 mx-auto mb-6 bg-sky-900/50 border-2 border-sky-500 rounded-full text-sky-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></div>
+              <h3 class="text-xl font-bold mb-2">2. Define & Ideate</h3>
+              <p class="text-gray-400">Synthesizing research into key insights, I define the core user needs. Then, I brainstorm and sketch a wide range of potential solutions.</p>
+            </div>
+            <div class="glass-effect p-8 rounded-lg text-center">
+              <div class="flex items-center justify-center h-16 w-16 mx-auto mb-6 bg-sky-900/50 border-2 border-sky-500 rounded-full text-sky-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg></div>
+              <h3 class="text-xl font-bold mb-2">3. Design & Prototype</h3>
+              <p class="text-gray-400">I create wireframes, high-fidelity mockups, and interactive prototypes to bring the best ideas to life, focusing on usability and aesthetics.</p>
+            </div>
+            <div class="glass-effect p-8 rounded-lg text-center">
+              <div class="flex items-center justify-center h-16 w-16 mx-auto mb-6 bg-sky-900/50 border-2 border-sky-500 rounded-full text-sky-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 16h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg></div>
+              <h3 class="text-xl font-bold mb-2">4. Test & Iterate</h3>
+              <p class="text-gray-400">I validate designs through usability testing, gathering feedback to refine and improve the solution in a continuous cycle of iteration.</p>
+            </div>
+          </div>
+
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">My AI-Accelerated Workflow</h2>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto">I also leverage cutting-edge AI tools to enhance efficiency and creativity, delivering high-quality results at an accelerated pace.</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-effect p-8 rounded-lg text-center">
+              <div class="flex items-center justify-center h-16 w-16 mx-auto mb-6 bg-sky-900/50 border-2 border-sky-500 rounded-full text-sky-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
+              <h3 class="text-xl font-bold mb-2">1. Accelerated Discovery & Synthesis</h3>
+              <p class="text-gray-400">I use AI to rapidly analyze research data, identify patterns, and generate user personas and journey maps. This combines discovery and definition into one fluid, data-driven phase.</p>
+            </div>
+            <div class="glass-effect p-8 rounded-lg text-center">
+              <div class="flex items-center justify-center h-16 w-16 mx-auto mb-6 bg-sky-900/50 border-2 border-sky-500 rounded-full text-sky-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg></div>
+              <h3 class="text-xl font-bold mb-2">2. Rapid Prototyping & Design</h3>
+              <p class="text-gray-400">Leveraging generative AI for ideation and wireframing, I can explore a wider range of design concepts quickly. This allows for faster creation of high-fidelity, interactive prototypes.</p>
+            </div>
+            <div class="glass-effect p-8 rounded-lg text-center">
+              <div class="flex items-center justify-center h-16 w-16 mx-auto mb-6 bg-sky-900/50 border-2 border-sky-500 rounded-full text-sky-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+              <h3 class="text-xl font-bold mb-2">3. Continuous AI-Powered Iteration</h3>
+              <p class="text-gray-400">AI tools help in analyzing usability test results and predicting user behavior, enabling me to test hypotheses and iterate on designs with greater speed and accuracy.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">Let's Connect</h2>
+          <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">I'm currently seeking new opportunities and would love to hear from you. Whether you have a question or just want to say hi, feel free to reach out.</p>
+          <div class="mt-8"><a href="mailto:hello@josemrivera.com" class="text-2xl md:text-3xl font-semibold text-sky-400 hover:text-sky-300 transition-colors duration-300">hello@josemrivera.com</a></div>
+          <div class="mt-10 flex justify-center space-x-6" aria-label="Social links">
+            <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors duration-300" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors duration-300" aria-label="Dribbble"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12c6.627 0 12-5.373 12-12S18.627 0 12 0zm6.44 16.11c-2.25 1.43-4.99 2.01-7.55 1.83.1-1.63.49-4.22 1.12-5.83 2.33.63 4.23 2.33 5.43 4zm2.5-3.38c-.7-2.82-2.42-5.2-4.75-6.79 1.63.36 3.87.63 5.39 1.59-1.11 1.69-1.88 3.59-2.23 5.2zm-4.13-7.53c2.3.95 4.08 2.82 5.16 5.06-1.5-.09-3.49-.27-4.98-.53.19-1.55-.33-3.66-1.18-4.53zm-7.24 2.3c.73-2.22 2.33-4.59 4.5-5.92-1.34.89-2.38 2.08-3.12 3.44-1.25.18-3.11.45-4.25.89 1.05-1.03 2.02-1.88 2.87-2.41zm-2.45 3.12c2.53-.36 4.66-.45 6.34-.45-.18 1.46-.54 3.84-1.09 5.29-2.25-.89-3.92-2.68-4.75-4.84zm7.83 6.94c-1.25-2.12-1.88-4.5-1.97-6.59.98 0 2.38.09 3.87.27-1.03 2.47-2.47 4.59-3.87 6.32z"/></svg></a>
+            <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors duration-300" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.299 1.634 4.217 3.797 4.66-.526.143-1.09 .196-1.66 .163.602 1.948 2.34 3.368 4.394 3.409-1.716 1.34-3.873 2.14-6.217 2.14-1.071 0-2.127-.14-3.165-.44 2.294 1.474 5.021 2.34 8.001 2.34 9.492 0 14.693-7.86 14.693-14.693 0-.224-.004-.447-.014-.67.962-.695 1.797-1.562 2.457-2.54z"/></svg></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="case-study-overlay" class="hidden" role="dialog" aria-modal="true" aria-labelledby="case-study-title">
+      <div class="container mx-auto px-6 py-16 md:py-24">
+        <div class="text-right mb-8">
+          <a href="#" id="back-to-portfolio-overlay" class="px-4 py-2 border border-sky-400 rounded-full text-sky-400 hover:bg-sky-400 hover:text-gray-900 transition-colors duration-300">&larr; Back to Portfolio</a>
+        </div>
+
+        <section class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold font-serif leading-tight"><span class="accent-color" id="case-study-title">[Project Name]</span></h1>
+          <p class="mt-6 text-xl text-gray-400 max-w-3xl mx-auto" id="case-study-tagline">A short, compelling tagline for the project.</p>
+          <img src="https://placehold.co/1200x600/1f2937/38bdf8?text=Hero+Image" alt="Project hero image" class="w-full h-auto object-cover rounded-lg shadow-2xl mt-12" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/1f2937/e5e7eb?text=Project+Hero';" id="case-study-hero-image" loading="lazy" />
+          <div id="clockwork-prototype-text-link-container" class="text-center mt-4 hidden">
+            <p class="text-lg text-gray-400">Link to Interactive Prototype: <a href="#" id="clockwork-prototype-text-link" target="_blank" class="text-sky-400 hover:text-sky-300 underline break-all"></a></p>
+          </div>
+        </section>
+
+        <section class="mt-20 md:mt-32 max-w-6xl mx-auto px-4">
+  <h2 class="text-2xl font-bold font-serif text-sky-400 mb-4">Overview</h2>
+  <div id="case-study-overview-text"></div>
+
+  <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+    <div>
+      <h4 class="text-sm text-gray-500 uppercase tracking-wider">My Role</h4>
+      <p class="text-lg font-semibold mt-1" id="case-study-role"></p>
+    </div>
+    <div>
+      <h4 class="text-sm text-gray-500 uppercase tracking-wider">Timeline</h4>
+      <p class="text-lg font-semibold mt-1" id="case-study-timeline"></p>
+    </div>
+    <div>
+      <h4 class="text-sm text-gray-500 uppercase tracking-wider">Tools</h4>
+      <p class="text-lg font-semibold mt-1" id="case-study-tools"></p>
+    </div>
+  </div>
+      </section>
+
+
+        <hr class="my-20 md:my-24 border-gray-700" />
+
+        <section class="grid md:grid-cols-3 gap-12">
+          <div class="md:col-span-1"><h2 class="text-2xl font-bold font-serif text-sky-400 mb-4">The Problem</h2></div>
+          <div class="md:col-span-2">
+            <p class="text-lg text-gray-300 leading-relaxed mb-4" id="case-study-problem-text"></p>
+            <div class="mt-8 p-6 bg-gray-800/50 rounded-lg"><p class="font-semibold text-sky-300 text-xl italic" id="case-study-problem-statement"></p></div>
+          </div>
+        </section>
+
+        <hr class="my-20 md:my-24 border-gray-700" />
+
+        <section>
+          <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">Understanding Needs From User</h2>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto">To build a solution, I first needed to understand the people I was designing for. My research focused on their motivations, needs, and frustrations.</p>
+          </div>
+
+          <div class="mt-12">
+            <h3 class="text-2xl font-bold text-sky-400 mb-4">Key Findings</h3>
+            <p id="case-study-findings-intro" class="text-gray-400 leading-relaxed mb-4">Through user prompts, interviews, and observational analysis, several key themes emerged:</p>
+            <ul id="case-study-findings-list" class="list-disc list-inside text-gray-400 leading-relaxed space-y-2"></ul>
+          </div>
+
+          <div class="mt-12">
+  <img src="assets/A_flowchart-style_digital_diagram_displays_an_AI-g.png" 
+       alt="AI-generated user flow diagram" 
+       class="w-full h-auto object-cover rounded-lg shadow-xl" 
+       id="case-study-research-image" 
+       loading="lazy" />
+  <p class="text-center text-sm text-gray-500 mt-4">
+    AI-generated flow diagram showcasing system structure, user decision branches, and automation pathways.
+  </p>
+</div>
+
+        </section>
+
+        <hr class="my-20 md:my-24 border-gray-700" />
+
+        <section>
+          <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">Crafting the Solution</h2>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto">Based on the research, I began designing a solution that directly addressed the user pain points. The focus was on clarity, efficiency, and trust.</p>
+          </div>
+      <div id="case-study-design-process" class="mt-12"></div>
+
+          
+          <div class="mt-12">
+            <h3 class="text-2xl font-bold text-sky-400 mb-4">From Sketches to High-Fidelity</h3>
+            <p id="case-study-design-intro" class="text-gray-400 leading-relaxed mb-4"></p>
+            <div class="grid md:grid-cols-2 gap-8 mt-8">
+              <img src="" alt="Wireframe" class="w-full h-auto object-cover rounded-lg shadow-xl" id="case-study-wireframe-image" loading="lazy" />
+              <img src="" alt="Mockup" class="w-full h-auto object-cover rounded-lg shadow-xl" id="case-study-mockup-image" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="mt-12">
+            <h3 class="text-2xl font-bold text-sky-400 mb-4">Key Design Decisions</h3>
+            <p id="case-study-decisions-intro" class="text-gray-400 leading-relaxed mb-4">Here are some of the specific design choices I made and the rationale behind them:</p>
+            <ul id="case-study-decisions-list" class="list-disc list-inside text-gray-400 leading-relaxed space-y-2"></ul>
+          </div>
+        </section>
+
+        <hr class="my-20 md:my-24 border-gray-700" />
+
+        <section>
+          <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">Outcomes & Impact</h2>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto">The final design was validated through usability testing and resulted in significant improvements to the user experience and key business metrics.</p>
+          </div>
+
+          <div class="mt-16 grid md:grid-cols-3 gap-8 text-center">
+            <div class="glass-effect p-8 rounded-lg"><p class="text-5xl font-bold accent-color" id="case-study-metric1-value"></p><p class="mt-2 text-gray-400" id="case-study-metric1-label"></p></div>
+            <div class="glass-effect p-8 rounded-lg"><p class="text-5xl font-bold accent-color" id="case-study-metric2-value"></p><p class="mt-2 text-gray-400" id="case-study-metric2-label"></p></div>
+            <div class="glass-effect p-8 rounded-lg"><p class="text-5xl font-bold accent-color" id="case-study-metric3-value"></p><p class="mt-2 text-gray-400" id="case-study-metric3-label"></p></div>
+          </div>
+
+          <div class="mt-12 text-center max-w-3xl mx-auto">
+            <h3 class="text-2xl font-bold text-sky-400 mb-4">Lessons Learned</h3>
+            <p id="case-study-lessons-learned" class="text-gray-400 leading-relaxed mb-4"></p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-900/50 border-t border-gray-800 mt-20">
+    <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+      <p>&copy; 2024 Jose M Rivera. All Rights Reserved.</p>
+      <p class="text-sm mt-1">Designed with care and coded in HTML & Tailwind CSS.</p>
+    </div>
+  </footer>
 
   <script>
-    // —— Mobile menu toggle —— 
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenuButton && mobileMenu) {
       mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-      mobileMenu.querySelectorAll('a').forEach(link =>
-        link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
-      );
+      mobileMenu.querySelectorAll('a')
+        .forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
     }
 
-    // —— Core elements —— 
-    const portfolioSections    = document.getElementById('portfolio-sections');
-    const caseStudySection     = document.getElementById('case-study-overlay');
-    const viewCaseStudyButtons = document.querySelectorAll('.view-case-study-btn');
-    const backToPortfolioLinks = document.querySelectorAll('#back-to-portfolio-overlay, #home-link-header');
+    const portfolioSections     = document.getElementById('portfolio-sections');
+    const caseStudySection      = document.getElementById('case-study-overlay');
+    const viewCaseStudyButtons  = document.querySelectorAll('.view-case-study-btn');
+    const backToPortfolioLinks  = document.querySelectorAll('#back-to-portfolio-overlay, #home-link-header');
+    let   lastFocusedElement    = null;
 
-    let lastFocusedElement = null;
-
-    // —— Data for case studies —— 
     const projectsData = {
-      /* your project1, project2, project3 objects exactly as before */
+      project1: {
+        title: "clockWORK: Employee Time Management App",
+        tagline: "Simplifying time tracking and scheduling for employers and employees, ensuring accuracy and transparency.",
+        heroImage: "https://raw.githubusercontent.com/jmrivera130/portfolio-images/7e4aab0a12c6305fb3fdc211ccd83b5f2d2fec63/HeroProj1.png",
+        overview: "This project focused on designing a mobile application, clockWORK, to provide a simple, intuitive, and cost-effective timekeeping solution for employers and employees. The primary goal was to ensure accurate and transparent hour tracking, specifically catering to non-tech-savvy business owners like Mickey Alvarez, and addressing frustrations faced by employees like James Mattis. This app was developed as a high-fidelity prototype during the Google UX Design Professional Certificate course.",
+        role: "UX/UI Designer (Individual Project)",
+        timeline: "8 Weeks (Google UX Course Project)",
+        tools: "Figma, Miro (for competitive analysis and ideation)",
+        problem: "Many small business owners and their employees struggle with complex, feature-bloated timekeeping software that is difficult to use and often comes with high subscription costs. This leads to inaccurate time logs, inefficient scheduling, and a lack of transparency in payroll, as experienced by users like James Mattis, who often had to correct his uncle's ledger due to a faulty time clock.",
+        problemStatement: "How might we create a user-friendly mobile application that provides accurate time tracking, efficient scheduling, and transparent communication features for both employers and employees?",
+        findings: [
+          { title:"Competitive feature bloat overwhelms users", body:"Existing apps overloaded non-tech-savvy owners like Mickey Alvarez." },
+          { title:"Complex UIs increase costs", body:"Learning curves and wasted time added operational cost and frustration." },
+          { title:"Manual methods were inaccurate", body:"James Mattis often corrected ledgers; transparency was missing." },
+          { title:"Emotional pain points surfaced", body:"Stress and anxiety around timekeeping changes were common." }
+        ],
+        researchImage: "https://raw.githubusercontent.com/jmrivera130/portfolio-images/7e4aab0a12c6305fb3fdc211ccd83b5f2d2fec63/UserMaps_clockWORK.png",
+        designIntro: "My design process, following the Google UX Course framework, began with a thorough competitive analysis... focusing on simplicity and cost-effectiveness.",
+        wireframeImage: "https://raw.githubusercontent.com/jmrivera130/portfolio-images/7e4aab0a12c6305fb3fdc211ccd83b5f2d2fec63/Wireframe_CLOCKwork.JPG",
+        mockupImage: "https://raw.githubusercontent.com/jmrivera130/portfolio-images/7e4aab0a12c6305fb3fdc211ccd83b5f2d2fec63/Figma_clockWORK_HighFidelity.JPG",
+        decisionsIntro: "Here are some of the specific design choices I made and the rationale behind them:",
+        decisions: [
+          "<strong>Intuitive Clock-in/out:</strong> Large clear button with GPS verification.",
+          "<strong>Dynamic Scheduling View:</strong> Calendar-based assigning and acceptance.",
+          "<strong>Integrated Bulletin Board:</strong> Timely announcements reduce missed info.",
+          "<strong>Login Tracking & History:</strong> Transparent logs for both parties."
+        ],
+        metric1Value: "30%",
+        metric1Label: "Anticipated Reduction in Payroll Discrepancies",
+        metric2Value: "25%",
+        metric2Label: "Projected Improvement in Scheduling Efficiency",
+        metric3Value: "90%",
+        metric3Label: "Target User Satisfaction with Transparency",
+        lessonsLearned: "Feature bloat kills usability; 'less is more' was key for this audience.",
+        prototypeTextLink: "https://www.figma.com/proto/ave1KhzWaiklqHug66pSSD/HIFI--clockWORK?node-id=7-9&p=f&t=81Yvcz8fx8Ky8Ocx-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2",
+        prototypeTextLinkLabel: "clockWORK Interactive Prototype"
+      },
+      project2: {
+        title: "CPRHero: Emergency First Aid & CPR App",
+        tagline: "Empowering users with accessible, step-by-step guidance for CPR and essential first aid in emergencies.",
+        heroImage: "https://raw.githubusercontent.com/jmrivera130/portfolio-images/3f5cb461aa2d105e588e132be932d1181bc5dbac/HeroProj2.png",
+        overview: "CPRHero is a mobile application designed to provide immediate, accessible instructions for CPR and various first aid scenarios...",
+        role: "UX/UI Designer (Individual Project, AI-Assisted)",
+        timeline: "Ongoing/Iterative Process",
+        tools: "ChatGPT, Uizard, Maze AI",
+        problem: "In critical emergency situations, individuals often lack immediate access to clear, concise, and actionable first aid or CPR instructions...",
+        problemStatement: "How might we design an emergency first aid and CPR app that is highly accessible and provides immediate, easy-to-follow guidance to users under pressure, enabling effective intervention?",
+        findings: [
+          { title:"Users freeze under pressure", body:"They need clear, fast guidance with no ambiguity." },
+          { title:"Visual simplicity is crucial", body:"Large buttons, minimal text, and step-by-step visuals." },
+          { title:"Emotional reassurance builds confidence", body:"Calm tone and visuals improved trust." },
+          { title:"Speed over completeness", body:"Quick access to CPR/Choking etc. mattered most." }
+        ],
+        researchImage: "https://raw.githubusercontent.com/jmrivera130/portfolio-images/3f5cb461aa2d105e588e132be932d1181bc5dbac/UserMaps_CPRHero.png",
+        designIntro: "My design process for CPRHero was deeply rooted in an AI-accelerated workflow...",
+        wireframeImage: "https://raw.githubusercontent.com/jmrivera130/portfolio-images/3f5cb461aa2d105e588e132be932d1181bc5dbac/Wireframe_CPRHero.jpg",
+        mockupImage: "https://raw.githubusercontent.com/jmrivera130/portfolio-images/3f5cb461aa2d105e588e132be932d1181bc5dbac/CPRHero_HighFidelity.jpg",
+        decisionsIntro: "Specific design choices and rationale:",
+        decisions: [
+          "<strong>Core App Structure:</strong> Clear home/tutorial navigation & emergency call assist.",
+          "<strong>Multi-Path User Flows:</strong> Scenario-specific flows (CPR, burns, AED, etc.).",
+          "<strong>Emergency Communication UX:</strong> Categorized symptom screens to assist responders.",
+          "<strong>Accessibility System:</strong> Text size, contrast, haptics, language toggles.",
+          "<strong>Prototype Logic:</strong> Repeat/Stop, modal confirmations, consistent states.",
+          "<strong>Design System Consistency:</strong> Color system, icon set, CTA patterns."
+        ],
+        metric1Value: "95%",
+        metric1Label: "User Comprehension (Goal)",
+        metric2Value: "80%",
+        metric2Label: "Task Completion Rate (Goal)",
+        metric3Value: "High",
+        metric3Label: "Accessibility Score (Audit Goal)",
+        lessonsLearned: "AI can co-design effectively; accessibility and clarity remain paramount.",
+        prototypeTextLink: "https://app.uizard.io/p/d4dcdc7f",
+        prototypeTextLinkLabel: "CPRHero Interactive Prototype"
+      },
+      project3: {
+  title: "Thirsty Bee: An AI Researched & Developed App",
+  tagline: "Designing an app from a premise to PWA, using AI as a creative partner.",
+  heroImage: "assets/HeroProj3.png",
+overview:
+  "<div class='flex flex-col md:flex-row gap-6 items-start'>" +
+    "<div class='flex-1 min-w-[280px] max-w-[600px]'>" +
+      "<p class='mb-6'>I was first introduced to the idea by a friend who had been bartending at weddings and private events. After several successful gigs, he began running into scheduling issues as events overlapped. He sensed a business opportunity and wanted to pursue it more seriously.</p>" +
+      "<p class='mb-6'>Through brainstorming sessions and honest conversations, we landed on the name <strong>Thirsty Bee</strong> — a playful nod to both wordplay and animal behavior. His real-world challenges became my research foundation.</p>" +
+      "<p class='mb-6'>From casual conversation to structured concept, I began transforming ideas into action — defining the app's structure, visual direction, and user flows. With the help of AI tools, I turned insights into prompts, and prompts into a fully designed product.</p>" +
+    "</div>" +
+    "<div class='flex-1 min-w-[280px] max-w-[600px]'>" +
+      "<img src='assets/thirsty-bee-infographic.png' alt='AI design process infographic' class='w-full rounded-lg shadow-md mt-2'/>" +
+      "<p class='text-sm italic text-center mt-2 text-gray-400'>AI-assisted UX/UI process, from concept to mobile deployment.</p>" +
+    "</div>" +
+  "</div>",
+  role: "UX/UI Designer • Prompt Engineer • Front-End Integrator",
+  timeline: "2024 - 2025 (Ongoing)",
+  tools: "ChatGPT (GPT-4), Claude, Midjourney, Lovable, Bolt, React.js, Tailwind CSS, Vite, Android Studio, Ngrok, GitHub",
+  problem: 
+  "Creating an event staffing app began with a real-world challenge: my friend was juggling overlapping bartending gigs with no centralized way to manage them. This sparked a question — how might technology streamline event staffing coordination?<br><br>" +
+  "I explored how AI tools could replace traditionally manual planning — user flows, IA, specs, and design systems — without compromising quality or user focus.",
+  problemStatement: 
+  "<em class='text-sky-300 font-semibold'>How might AI significantly accelerate the UX/UI design process while ensuring clarity, scalability, and a strong user-centered approach?</em>",
+  findingsIntro: "Exploring the brand identity through AI-generated visuals helped shape the app’s tone, style, and user experience. These early explorations informed all design decisions moving forward.",
+
+  researchCaption: "A collage of MidJourney-generated icons and UI concepts used to establish the Thirsty Bee brand identity.",
+    findings: [
+    { title: "App Icon Ideation", body: "Used MidJourney to explore various visual metaphors — bees, drinks, and playful mascots — arriving at a clean, recognizable mark." },
+    { title: "UI Style Exploration", body: "Generated UI mockups aligned with the visual brand, focusing on playful yet trustworthy aesthetics." },
+    { title: "Typography & Color Testing", body: "Prompted AI to suggest type pairings and color systems, narrowing into a style guide used in prototyping." }
+  ],
+
+  researchImage: "https://placehold.co/1200x600/1f2937/38bdf8?text=AI-Generated+User+Flows", // update later
+  designIntro: "Designing with AI was a new challenge. I wasn't just the designer—I became the conductor. Every tool needed clear instructions, refinement, and correction. From wireframes to flows, I used AI to move fast, but I still made the final calls. The process felt like having a superpower that needed steering.",
+  wireframeImage: "https://placehold.co/600x400/1f2937/38bdf8?text=AI+Wireframes",
+  mockupImage: "https://placehold.co/600x400/1f2937/38bdf8?text=AI-Enhanced+Mockup",
+  designProcess:
+  "<h3 class='text-xl font-semibold text-sky-400 mb-2'>1. Branding through Prompting</h3>" +
+  "<p class='text-gray-400 mb-6'>I prompted MidJourney with dozens of thematic directions — bees, drinks, motion, energy — until I arrived at an icon that was playful, modern, and functional. These visuals helped define the app's tone before I ever designed a screen.</p>" +
+  "<img src='assets/bb58c82c-0507-4126-926c-661ceae9f5d4.png' alt='MidJourney icon exploration' class='rounded-lg shadow-md w-full mb-6' />" +
+
+  "<h3 class='text-xl font-semibold text-sky-400 mb-2'>2. Information Architecture & Wireframes</h3>" +
+  "<p class='text-gray-400 mb-6'>Using ChatGPT and Claude, I structured the entire navigation system in minutes — from onboarding to booking screens. Then I described the layouts in plain text and prompted HTML/CSS wireframes to visualize the app early.</p>" +
+  "<img src='https://placehold.co/600x400/1f2937/38bdf8?text=AI+Wireframes' alt='AI-generated wireframe layout' class='rounded-lg shadow-md w-full mb-6' />" +
+
+  "<h3 class='text-xl font-semibold text-sky-400 mb-2'>3. Style System & Prototyping</h3>" +
+  "<p class='text-gray-400 mb-6'>I imported wireframes into Bolt to quickly prototype interactions and generate a tailored design system based on my visual inspiration. I then transferred the app into Lovable for refined layout control and styling.</p>" +
+  "<img src='https://placehold.co/600x400/1f2937/38bdf8?text=AI-Enhanced+Mockup' alt='Bolt-generated style guide and mockup' class='rounded-lg shadow-md w-full mb-6' />",
+
+  decisionsIntro: "Key design decisions informed by AI insights and human refinement:",
+  decisions: [
+  "<strong>AI as Creative Collaborator:</strong> I relied on Midjourney and Claude to spark visual and structural ideas — then refined them manually to match the tone and simplicity I envisioned.",
+  "<strong>Designing for Booking Speed:</strong> Prioritized a 'fewest-taps' approach to let users make reservations within 15 seconds.",
+  "<strong>Wireframes with Texture:</strong> Inspired by printed drink menus and vintage ticketing systems — I layered visual textures to create warmth and familiarity.",
+  "<strong>Real-Device Testing:</strong> Pushed builds to an Android device early, letting me test real-world latency, tap targets, and interaction pacing."
+  ],
+
+  metric1Value: "50%",
+  metric1Label: "Reduction in Wireframe Development Time",
+  metric2Value: "3x",
+  metric2Label: "Increase in User Flow Iterations",
+  metric3Value: "100%",
+  metric3Label: "Completion of End-to-End Mobile Prototype",
+  lessonsLearned: "<strong>Prompt engineering</strong> emerged as its own discipline during this project. Crafting precise instructions for AI became just as important as wireframing or prototyping. I learned to:<ul class='list-disc list-inside mt-4 text-left'><li><strong>Refine natural language prompts</strong> to guide AI toward usable IA, flows, and component logic.</li><li><strong>Iterate quickly</strong> when AI misunderstood goals, treating misfires as design feedback.</li><li><strong>Balance automation with judgment</strong>, ensuring that AI output stayed aligned with user needs and accessibility standards.</li></ul><p class='mt-4'>This iterative process taught me that good prompting is a UX skill — it requires clarity, empathy, and foresight.</p>",
+  prototypeTextLink: "https://thirsty-bee-reimagined.lovable.app/",
+  prototypeTextLinkLabel: "Thirsty Bee Interactive Prototype"
+}
+
     };
 
-    // —— Helpers —— 
-    function populateList(ul, items, formatter) {
+
+    function populateList(ul, items, formatter){
       ul.innerHTML = '';
       items.forEach(item => {
         const li = document.createElement('li');
@@ -62,46 +508,54 @@
       });
     }
 
-    function showPortfolio() {
-      portfolioSections?.classList.remove('hidden');
-      caseStudySection?.classList.add('hidden');
+    function showPortfolio(){
+      if(!portfolioSections || !caseStudySection) return;
+      portfolioSections.classList.remove('hidden');
+      caseStudySection.classList.add('hidden');
       document.body.style.overflow = '';
       if (lastFocusedElement) lastFocusedElement.focus();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({top:0, behavior:'smooth'});
     }
 
-    function showCaseStudy(projectId) {
+    function showCaseStudy(projectId){
       const project = projectsData[projectId];
-      if (!project || !portfolioSections || !caseStudySection) return;
+      if(!project || !portfolioSections || !caseStudySection) return;
 
-      // fill in all the fields:
-      document.getElementById('case-study-title').textContent       = project.title;
-      document.getElementById('case-study-tagline').textContent     = project.tagline;
-      document.getElementById('case-study-hero-image').src          = project.heroImage;
-      document.getElementById('case-study-overview-text').textContent = project.overview;
-      document.getElementById('case-study-role').textContent        = project.role;
-      document.getElementById('case-study-timeline').textContent    = project.timeline;
-      document.getElementById('case-study-tools').textContent       = project.tools;
-      document.getElementById('case-study-problem-text').textContent    = project.problem;
-      document.getElementById('case-study-problem-statement').textContent = project.problemStatement;
+      document.getElementById('case-study-title').textContent = project.title;
+      document.getElementById('case-study-tagline').textContent = project.tagline;
+      document.getElementById('case-study-hero-image').src = project.heroImage;
+      document.getElementById('case-study-overview-text').innerHTML = project.overview;
+      document.getElementById('case-study-role').textContent = project.role;
+      document.getElementById('case-study-timeline').textContent = project.timeline;
+      document.getElementById('case-study-tools').textContent = project.tools;
+      document.getElementById('case-study-problem-text').innerHTML = project.problem;
+      document.getElementById('case-study-problem-statement').innerHTML = project.problemStatement;
 
-      populateList(
-        document.getElementById('case-study-findings-list'),
-        project.findings,
-        f => `<strong>${f.title}:</strong> ${f.body}`
-      );
+      document.getElementById('case-study-findings-intro').textContent = project.findingsIntro;
 
-      document.getElementById('case-study-research-image').src      = project.researchImage;
+      const findingsList = document.getElementById('case-study-findings-list');
+      populateList(findingsList, project.findings, f => `<strong>${f.title}:</strong> ${f.body}`);
+
+const researchImg = document.getElementById('case-study-research-image');
+const researchCaption = researchImg.nextElementSibling; // Gets the <p> directly after the image
+
+if (project.title.includes("Thirsty Bee")) {
+  researchImg.src = "assets/A_flowchart-style_digital_diagram_displays_an_AI-g.png";
+  researchImg.alt = "AI-generated user flow diagram for Thirsty Bee";
+  researchImg.className = "max-w-3xl mx-auto w-full h-auto object-contain rounded-lg shadow-xl";
+  researchCaption.textContent = "AI-generated flow diagram showcasing system structure, user decision branches, and automation pathways.";
+} else {
+  researchImg.src = project.researchImage;
+  researchImg.alt = "User persona or research artifact";
+  researchCaption.textContent = "This image showcases the persona and hypothesized journey map that informed the design.";
+}
       document.getElementById('case-study-design-intro').textContent = project.designIntro;
-      document.getElementById('case-study-wireframe-image').src     = project.wireframeImage;
-      document.getElementById('case-study-mockup-image').src        = project.mockupImage;
+      document.getElementById('case-study-wireframe-image').src = project.wireframeImage;
+      document.getElementById('case-study-mockup-image').src = project.mockupImage;
 
       document.getElementById('case-study-decisions-intro').textContent = project.decisionsIntro || '';
-      populateList(
-        document.getElementById('case-study-decisions-list'),
-        project.decisions,
-        d => d
-      );
+      const decisionsList = document.getElementById('case-study-decisions-list');
+      populateList(decisionsList, project.decisions, d => d);
 
       document.getElementById('case-study-metric1-value').textContent = project.metric1Value;
       document.getElementById('case-study-metric1-label').textContent = project.metric1Label;
@@ -109,11 +563,13 @@
       document.getElementById('case-study-metric2-label').textContent = project.metric2Label;
       document.getElementById('case-study-metric3-value').textContent = project.metric3Value;
       document.getElementById('case-study-metric3-label').textContent = project.metric3Label;
-      document.getElementById('case-study-lessons-learned').textContent = project.lessonsLearned;
+      document.getElementById('case-study-lessons-learned').innerHTML = project.lessonsLearned;
+
+      document.getElementById('case-study-design-process').innerHTML = project.designProcess || "";
 
       const protoWrap = document.getElementById('clockwork-prototype-text-link-container');
       const protoLink = document.getElementById('clockwork-prototype-text-link');
-      if (project.prototypeTextLink) {
+      if(project.prototypeTextLink){
         protoLink.href = project.prototypeTextLink;
         protoLink.textContent = project.prototypeTextLinkLabel || 'View Interactive Prototype';
         protoWrap.classList.remove('hidden');
@@ -129,36 +585,31 @@
       caseStudySection.focus();
     }
 
-    // —— Event listeners —— 
-    viewCaseStudyButtons.forEach(btn =>
+    viewCaseStudyButtons.forEach(btn => {
       btn.addEventListener('click', e => {
         e.preventDefault();
         showCaseStudy(e.currentTarget.dataset.projectId);
-      })
-    );
+      });
+    });
 
-    backToPortfolioLinks.forEach(link =>
+    backToPortfolioLinks.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
         showPortfolio();
-        if (link.hash) {
-          setTimeout(() => {
-            const target = document.querySelector(link.hash);
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
-          }, 100);
-        }
-      })
-    );
+        if (link.hash) setTimeout(()=>{
+          const target=document.querySelector(link.hash);
+          if(target) target.scrollIntoView({behavior:'smooth'});
+        },100);
+      });
+    });
 
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && !caseStudySection.classList.contains('hidden')) {
+      if(e.key==='Escape' && !caseStudySection.classList.contains('hidden')){
         showPortfolio();
       }
     });
 
-    // —— Initialize —— 
     window.addEventListener('load', showPortfolio);
   </script>
 </body>
 </html>
-

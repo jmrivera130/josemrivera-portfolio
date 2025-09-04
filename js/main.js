@@ -89,12 +89,19 @@ const projectsData = {
     title: "Thirsty Bee: Event Staffing Service App",
     tagline: "Streamlining event staffing bookings for customers, emphasizing efficiency and clarity.",
     heroImage: "https://images.unsplash.com/photo-1517457210-bf26f49c0631?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    overview: "Thirsty Bee is a conceptual app and website for a fictional staffing company...",
+    overview:
+      "<div class=\"flex flex-col md:flex-row items-center gap-8\">" +
+        "<div class=\"w-full md:w-1/2\">" +
+          "<p class=\"text-gray-300 leading-relaxed\">Thirsty Bee is a conceptual app and website for a fictional staffing company...<\/p>" +
+        "<\/div>" +
+        "<img src=\"assets/thirsty-bee-infographic.png\" alt=\"AI design process infographic\" class=\"w-full md:w-1/2 rounded-lg shadow-md\" loading=\"lazy\" \/>" +
+      "<\/div>",
     role: "UX/UI Designer (Individual Project, AI-Assisted)",
     timeline: "Ongoing/Iterative Process",
     tools: "ChatGPT, Uizard, Figma",
     problem: "Customers seeking event staffing services often face a fragmented and complex booking process...",
     problemStatement: "How might we design a user-friendly platform that streamlines the discovery, booking, and management of event staffing services, ensuring clarity and convenience for customers?",
+    findingsIntro: "<p class='text-gray-400 mb-4'>Here are key visual explorations and brand elements as collated via AI prompting:</p>",
     findings: [
       { title:"Initial vagueness", body:"Needed structured LLM interaction to define features." },
       { title:"Spec gap", body:"Iterative prompting turned ideas into actionable specs." },
@@ -104,6 +111,27 @@ const projectsData = {
     designIntro: "This project heavily leveraged AI as a collaborative partner...",
     wireframeImage: "https://placehold.co/600x400/1f2937/38bdf8?text=Thirsty+Bee+Wireframes",
     mockupImage: "https://placehold.co/600x400/1f2937/38bdf8?text=Thirsty+Bee+Mockups",
+    designProcess:
+      "<div class='space-y-12'>" +
+        // Stage 1
+        "<section class='space-y-4'>" +
+          "<h3 class='text-2xl font-bold text-sky-400'>Branding through Prompting</h3>" +
+          "<p class='text-gray-400 leading-relaxed'>I explored naming, visual metaphors, and brand voice by iterating prompts with AI tools. This accelerated discovery surfaced a playful, energetic identity that still reads clean and professional for event clients.</p>" +
+          "<img src='assets/HeroProj3.png' alt='Branding and identity exploration' class='responsive-media w-full h-auto object-contain rounded-lg shadow-xl' loading='lazy' />" +
+        "</section>" +
+        // Stage 2
+        "<section class='space-y-4'>" +
+          "<h3 class='text-2xl font-bold text-sky-400'>IA & Wireframes</h3>" +
+          "<p class='text-gray-400 leading-relaxed'>With the core value prop clearer, I defined an information architecture and drafted low‑fidelity wireframes to validate flows like browsing services, selecting packages, checking availability, and booking.</p>" +
+          "<img src='https://placehold.co/600x400/1f2937/38bdf8?text=Thirsty+Bee+Wireframes' alt='Information architecture and wireframes' class='responsive-media w-full h-auto object-contain rounded-lg shadow-xl' loading='lazy' />" +
+        "</section>" +
+        // Stage 3
+        "<section class='space-y-4'>" +
+          "<h3 class='text-2xl font-bold text-sky-400'>Style System & Prototyping</h3>" +
+          "<p class='text-gray-400 leading-relaxed'>I translated the brand into a lightweight style system, then produced high‑fidelity mockups and a click‑through prototype to refine microcopy, hierarchy, and edge cases.</p>" +
+          "<img src='https://placehold.co/600x400/1f2937/38bdf8?text=Thirsty+Bee+Mockups' alt='Style system and high‑fidelity prototype' class='responsive-media w-full h-auto object-contain rounded-lg shadow-xl' loading='lazy' />" +
+        "</section>" +
+      "</div>",
     decisionsIntro: "Design choices & rationale:",
     decisions: [
       "<strong>Service Packages:</strong> Clear options based on event size with customization.",
@@ -115,7 +143,9 @@ const projectsData = {
     metric1Value: "Detailed", metric1Label: "App Specification Achieved",
     metric2Value: "High",     metric2Label: "Planning Clarity",
     metric3Value: "N/A",      metric3Label: "Deployment",
-    lessonsLearned: "Structured prompting + AI partnership = faster clarity and specs."
+    lessonsLearned: "Structured prompting + AI partnership = faster clarity and specs.",
+    prototypeTextLink: "https://thirsty-bee-reimagined.lovable.app/",
+    prototypeTextLinkLabel: "Thirsty Bee Interactive Prototype"
   }
 };
 
@@ -145,20 +175,38 @@ function showCaseStudy(projectId){
   document.getElementById('case-study-title').textContent = project.title;
   document.getElementById('case-study-tagline').textContent = project.tagline;
   document.getElementById('case-study-hero-image').src = project.heroImage;
-  document.getElementById('case-study-overview-text').textContent = project.overview;
+  document.getElementById('case-study-overview-text').innerHTML = project.overview;
   document.getElementById('case-study-role').textContent = project.role;
   document.getElementById('case-study-timeline').textContent = project.timeline;
   document.getElementById('case-study-tools').textContent = project.tools;
   document.getElementById('case-study-problem-text').textContent = project.problem;
   document.getElementById('case-study-problem-statement').textContent = project.problemStatement;
 
+  // Findings intro (allow HTML for consistent Tailwind-styled paragraph)
+  const findingsIntroEl = document.getElementById('case-study-findings-intro');
+  if (findingsIntroEl) {
+    findingsIntroEl.innerHTML = project.findingsIntro || findingsIntroEl.innerHTML;
+  }
+
   const findingsList = document.getElementById('case-study-findings-list');
   populateList(findingsList, project.findings, f => `<strong>${f.title}:</strong> ${f.body}`);
 
-  document.getElementById('case-study-research-image').src = project.researchImage;
+  const researchImg = document.getElementById('case-study-research-image');
+  if (researchImg) {
+    researchImg.src = project.researchImage;
+    researchImg.className = 'max-w-3xl mx-auto responsive-media w-full h-auto object-contain rounded-lg shadow-xl max-h-[420px] md:max-h-[560px] lg:max-h-[640px]';
+    researchImg.loading = 'lazy';
+
+    // Thirsty Bee-specific layout: center, limit width, add margins
+    if ((project.title || '').includes('Thirsty Bee') || projectId === 'project3') {
+      researchImg.className = 'mx-auto max-w-lg w-full h-auto object-contain rounded-lg shadow-xl my-6';
+    }
+  }
   document.getElementById('case-study-design-intro').textContent = project.designIntro;
   document.getElementById('case-study-wireframe-image').src = project.wireframeImage;
   document.getElementById('case-study-mockup-image').src = project.mockupImage;
+  const designProcessEl = document.getElementById('case-study-design-process');
+  if (designProcessEl) designProcessEl.innerHTML = project.designProcess || '';
 
   document.getElementById('case-study-decisions-intro').textContent = project.decisionsIntro || '';
   const decisionsList = document.getElementById('case-study-decisions-list');

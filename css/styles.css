@@ -29,3 +29,33 @@ body {
   z-index:60; overflow-y:auto; -webkit-overflow-scrolling:touch;
   padding:80px 0 20px;
 }
+
+/* Responsive media defaults */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utility for card images to keep consistent aspect */
+.card-image {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Optional helper if you want explicit opt-in */
+.responsive-media {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Blur-up lazy-loading effect for images */
+.blur-up {
+  filter: blur(12px);
+  transform: scale(1.02);
+  opacity: 0.85;
+  transition: filter 400ms ease, transform 400ms ease, opacity 300ms ease;
+}
